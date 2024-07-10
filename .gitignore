@@ -162,4 +162,5 @@ cython_debug/
 #.idea/
 
 yolov8n.pt
-yolov10n.pt
+yolov8n-obb.pt
+71wLp2bLzdL.jpg
