@@ -1,6 +1,5 @@
-train: train/images
-val: valid/images
+train: ./train/images
+val: ./valid/images
 
-names: 
-  0: barrel
-  1: toytank
+nc: 1
+names: ['barrel']
