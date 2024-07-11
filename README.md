@@ -18,6 +18,14 @@ The program will process the image, locate the barrel, and calculate its coordin
 - Different Perspectives: Each image shows the tank from a different angle.
 - Fixed Barrel Direction: Barrel always points in the same direction, limiting variability.
 
+## Requirements
+
+1. Ensure Python 3.11 is installed on your system. If not, download and install it from the official Python website.
+2. Make sure that the IPython kernel is installed in the environment to run the Jupyter Notebooks provided.
+3. Create a venv and install all packages defined in *requirements.txt*.
+4. Run *1_training.ipynb* to train the `YOLOv8n-pose` model on the tanks data sets (training, val)
+5. Run *2_inference.ipynb* to test the custom model (adjust the confidence threshold value if necessary) and estimate the barrel's position and direction.
+
 ## Approach
 
 Used YOLOv8 for both object detection and pose estimation, ensuring accurate localization and orientation of tank components. The use of data augmentation and a pretrained model enhances the robustness and efficiency of the solution, making it suitable for deployment on mobile platforms.
