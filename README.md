@@ -35,18 +35,20 @@ Here is a summary of the key steps and their significance:
 
     - Training and Validation Split: The dataset was split into three training images and one validation image. This ensures that the model is trained on diverse perspectives of the tank (side, top, and front edge) and validated on a different perspective (side top), promoting generalization.
 
-- **Data Annotation**
-
+- **Data Annotation** (with RoboFlow)
+    - Images have been preprocessed by being resized to 640x640 pixels to match the maximum dimensions for YOLOv8.
     - Bounding Boxes and Key Points: Bounding boxes were drawn for the hull and turret (including the barrel) for object detection, while key points were annotated for pose estimation. This dual annotation strategy allows the model to learn both the localization and orientation of the tank components.
 
-- **Augmentation**
+    ![BBox Pose Annotation](bbox_pose.png)
+
+- **Data Augmentation** (with RoboFlow)
 
     - Data Augmentation: Various transformations were applied to the training images to create an augmented dataset. This step increases the size and variability of the training data, which helps the model generalize better to unseen images. The datasets were exported in YOLOv8 format, ensuring compatibility with the training framework.
 
 - **Model Training**
 
-    - Pretrained YOLOv8n Model: A pretrained YOLOv8n (nano) model was used as the base for training. This model was fine-tuned on the augmented dataset to detect the barrel's localization and orientation, which is crucial for mobile platforms due to its lightweight nature.
-    - Training Configuration: Training parameters such as image size, epochs, and batch size were configured, and the best model weights were saved. Setting random seeds ensured reproducibility of the results.
+    - YOLOv8n Model: A pretrained YOLOv8n (nano) model specialized on pose estimation (`YOLOv8n-pose`) was used as the base for training. This model was fine-tuned on the augmented dataset to detect the barrel's localization and orientation, which is crucial for mobile platforms due to its lightweight nature.
+    - Training Configuration: Training parameters such as image size and epochs were configured, and the best model weights were saved. Setting random seeds ensured reproducibility of the results.
 
 - **Inference**
 
