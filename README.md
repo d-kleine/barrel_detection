@@ -61,7 +61,7 @@ Here is a summary of the key steps and their significance:
 
     ![Rotation angle](rotation_angle.png)
 
-## Limitations
+## Limitations and Conclusion
 
 - **Lack of Sufficient Data**
 The model's performance is not perfect, likely due to the insufficient amount of data.  Additionally, the dataset's limitations different perspectives in each image, and a lack of variance in tank characteristics such as color, direction, and size, which further restrict the model's ability to generalize. Machine learning models require large and diverse datasets to generalize well to new, unseen data. When the dataset is limited, the model may struggle to learn the underlying patterns effectively, leading to suboptimal performance.
@@ -73,6 +73,8 @@ An alternative to data augmentation could have been Leave-One-Out Cross-Validati
 Other data augmentation techniques, such as flipping and rotation, could have been employed to generate new images and potentially improve the model. These methods help prevent overfitting and improve model robustness by exposing the model to a wider variety of data.
 
 When using AR with a smartphone, it is crucial to consider the user's perspective. Augmentation techniques should be applied judiciously to ensure that the augmented elements align correctly with the real-world environment and provide a seamless user experience. For instance, while geometric transformations like flipping and rotation can enhance the model's robustness, they must not distort the perspective in a way that makes the AR experience unrealistic or disorienting for the user. Therefore, careful calibration and validation are necessary to ensure that the augmented reality elements behave as expected in the user's view.
+
+- **Alternative Models**: While `YOLOv8n-pose` was utilized for pose estimation, `ViTPose small` could have been an alternative. ViTPose small, based on Vision Transformers, offers high accuracy and flexibility, and is particularly effective for detailed pose estimation tasks. Additionally, ViTPose's ability to capture fine-grained details and its high parallelism make it potentially better suited for this task. Unlike YOLOv8, which uses a convolutional neural network (CNN) architecture, ViTPose leverages a Transformer architecture that excels in capturing long-range dependencies and contextual information, which can enhance the precision of identifying the 2D coordinates and orientation of the barrel in the image.
 
 * **Augmented Reality (AR) Considerations**
 In the context of augmented reality (AR), estimating a 3D vector of the tank from 2D images is crucial for accurate digital projectile trajectories. This task requires generating a depth map from the 2D images to understand the spatial relationships and distances within the scene. Accurate depth estimation ensures that digital elements interact realistically with the physical environment, which is essential for creating a convincing AR experience.
