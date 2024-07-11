@@ -60,3 +60,19 @@ Here is a summary of the key steps and their significance:
     - Keypoint Extraction: Key points for the turret (including the barrel) and hull were extracted from the inference results. These key points were used to estimate the barrel’s relative rotation angle and orientation vector components, providing insights into the barrel's orientation relative to the tank's hull.
 
     ![Rotation angle](rotation_angle.png)
+
+## Limitations
+
+- **Lack of Sufficient Data**
+The model's performance is not perfect, likely due to the insufficient amount of data.  Additionally, the dataset's limitations different perspectives in each image, and a lack of variance in tank characteristics such as color, direction, and size, which further restrict the model's ability to generalize. Machine learning models require large and diverse datasets to generalize well to new, unseen data. When the dataset is limited, the model may struggle to learn the underlying patterns effectively, leading to suboptimal performance.
+
+- **Alternative Validation Techniques**
+An alternative to data augmentation could have been Leave-One-Out Cross-Validation (LOOCV). LOOCV is a robust method for evaluating model performance, especially when dealing with small datasets. It involves using each data point as a single test case while the remaining data points form the training set. This process is repeated for each data point, providing an unbiased estimate of model performance. However, LOOCV is computationally expensive.
+
+- **Data Augmentation Techniques**
+Other data augmentation techniques, such as flipping and rotation, could have been employed to generate new images and potentially improve the model. These methods help prevent overfitting and improve model robustness by exposing the model to a wider variety of data.
+
+When using AR with a smartphone, it is crucial to consider the user's perspective. Augmentation techniques should be applied judiciously to ensure that the augmented elements align correctly with the real-world environment and provide a seamless user experience. For instance, while geometric transformations like flipping and rotation can enhance the model's robustness, they must not distort the perspective in a way that makes the AR experience unrealistic or disorienting for the user. Therefore, careful calibration and validation are necessary to ensure that the augmented reality elements behave as expected in the user's view.
+
+* **Augmented Reality (AR) Considerations**
+In the context of augmented reality (AR), estimating a 3D vector of the tank from 2D images is crucial for accurate digital projectile trajectories. This task requires generating a depth map from the 2D images to understand the spatial relationships and distances within the scene. Accurate depth estimation ensures that digital elements interact realistically with the physical environment, which is essential for creating a convincing AR experience.
