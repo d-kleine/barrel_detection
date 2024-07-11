@@ -43,6 +43,8 @@ Here is a summary of the key steps and their significance:
 
   (* In the screenshot `tank` means the hull, `barrel` means the turret that includes the barrel too)
 
+    ![Keypoints](keypoints.png)
+
 - **Data Augmentation** (with RoboFlow)
 
     - Data Augmentation: Various transformations were applied to the training images to create an augmented dataset. This step increases the size and variability of the training data, which helps the model generalize better to unseen images. The datasets were exported in YOLOv8 format, ensuring compatibility with the training framework.
@@ -56,3 +58,5 @@ Here is a summary of the key steps and their significance:
 
     - Custom Model Inference: The trained YOLOv8n model was loaded for inference on test images. A specified confidence threshold was used to filter predictions.
     - Keypoint Extraction: Key points for the turret (including the barrel) and hull were extracted from the inference results. These key points were used to estimate the barrel’s relative rotation angle and orientation vector components, providing insights into the barrel's orientation relative to the tank.
+
+    ![Rotation angle](rotation_angle.png)
