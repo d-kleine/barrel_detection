@@ -41,6 +41,8 @@ Here is a summary of the key steps and their significance:
 
     ![BBox Pose Annotation](bbox_pose.png)
 
+  (* In the screenshot `tank` means the hull, `barrel` means the turret that includes the barrel too)
+
 - **Data Augmentation** (with RoboFlow)
 
     - Data Augmentation: Various transformations were applied to the training images to create an augmented dataset. This step increases the size and variability of the training data, which helps the model generalize better to unseen images. The datasets were exported in YOLOv8 format, ensuring compatibility with the training framework.
