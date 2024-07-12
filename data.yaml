@@ -1,5 +1,5 @@
-train: ../train/images
-val: ../valid/images
+train: ./train/images
+val: ./valid/images
 
 kpt_shape: [5, 3]
 flip_idx: [0, 1, 2, 3, 4]
