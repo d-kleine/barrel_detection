@@ -1,8 +1,8 @@
-train: ./train/images
-val: ./valid/images
+train: ../train/images
+val: ../valid/images
 
 kpt_shape: [5, 3]
 flip_idx: [0, 1, 2, 3, 4]
 
 nc: 2
-names: ['hull', 'turret']
+names: ['0_turret', '1_hull']
