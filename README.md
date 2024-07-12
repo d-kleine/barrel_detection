@@ -41,8 +41,6 @@ Here is a summary of the key steps and their significance:
 
     ![BBox Pose Annotation](bbox_pose.png)
 
-  (* In the screenshot `tank` means the hull, `barrel` means the turret that includes the barrel too)
-
     ![Keypoints](keypoints.png)
 
 - **Data Augmentation** (with RoboFlow)
