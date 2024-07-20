@@ -131,9 +131,7 @@ Or with `turret_keypoints[1]`:
 python 2_inference.py path/to/test/image.jpg turret_keypoints[1]
 ```
 
-### **4. Output Information**
-
-The script will execute and perform inference on the specified test image, displaying the image and printing the following information:
+As the Juypter Notebook, the script will execute and perform inference on the specified test image, displaying the image and printing the following information:
 
 - Image processing details, including the file path, dimensions, and detection results.
 - Speed metrics for preprocessing, inference, and postprocessing.
@@ -144,8 +142,6 @@ The script will execute and perform inference on the specified test image, displ
 - Estimated rotation angle of the barrel relative to the hull.
 - Barrel orientation description relative to the hull.
 - Barrel orientation vector components.
-
-By following these steps, you will be able to set up your environment, train the model, and run inference to estimate the barrel's position and direction using the `2_inference.py` script.
 
 ## Approach
 
