@@ -106,6 +106,9 @@ image_path = "path/to/test/image.jpg"  # Update this path to the test image (or 
 ...
 ```
 
+> [!NOTE]
+> If the inference fails as either one of the objects won't be detected or there same class will be detected more than once in the test image(s), instead of executing `results = model(image_path)` please make use of `results = model.predict(image_path, save=False, conf=0.5)` for a single image and adjust the confidence score treshold value there (code snippet is provided).
+
 In the code, you can change the reference keypoint from `turret_keypoints[3]` (barrel's start intersecting with turret) to `turret_keypoints[1]`(top of turret) to get a better estimate of the barrel's orientation, as the top of turret keypoint is visible in all images and therefore has a higher confidence score:
 ```python
 ...
@@ -114,6 +117,18 @@ intersection = turret_keypoints[1]  # Instead of turret_keypoints[3]
 
 ...
 ```
+
+This code will execute and perform inference on the specified test image, displaying the image and printing the following information:
+
+- Image processing details, including the file path, dimensions, and detection results.
+- Speed metrics for preprocessing, inference, and postprocessing.
+- Detected class names and their corresponding indices.
+- Keypoints data for the detected objects.
+- Confidence scores for keypoints.
+- Barrel vector coordinates.
+- Estimated rotation angle of the barrel relative to the hull.
+- Barrel orientation description relative to the hull.
+- Barrel orientation vector components.
 
 #### 5.2 Python script (Inference)
 Alteranative, for the inference, a `2_inference.py` script is provided. It performs inference on a test image using the trained `YOLOv8n-pose` model. The script accepts two command-line arguments:
@@ -131,17 +146,7 @@ Or with `turret_keypoints[1]`:
 python 2_inference.py path/to/test/image.jpg turret_keypoints[1]
 ```
 
-As the Juypter Notebook, the script will execute and perform inference on the specified test image, displaying the image and printing the following information:
 
-- Image processing details, including the file path, dimensions, and detection results.
-- Speed metrics for preprocessing, inference, and postprocessing.
-- Detected class names and their corresponding indices.
-- Keypoints data for the detected objects.
-- Confidence scores for keypoints.
-- Barrel vector coordinates.
-- Estimated rotation angle of the barrel relative to the hull.
-- Barrel orientation description relative to the hull.
-- Barrel orientation vector components.
 
 ## Approach
 

@@ -34,6 +34,19 @@ def main(image_path, keypoint):
     plt.axis('off')  # Hide axes
     plt.show()
 
+    # Use this below code if inference fails for single image
+    # # Make predictions
+    # results = model.predict(image_path, save=False, conf=0.5) # adjust confidence score treshold value if necessary
+
+    # # Visualize the results
+    # for result in results:
+    #     # Plot results image
+    #     im_bgr = result.plot()  # BGR-order numpy array
+    #     im_rgb = Image.fromarray(im_bgr[..., ::-1])  # Convert to RGB-order PIL image
+
+    #     # Show the image (optional, depending on your environment)
+    #     im_rgb.show()
+
     # Retrieve and print the class names from the model
     class_names = model.model.names
     for class_index, class_name in class_names.items():
