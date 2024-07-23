@@ -131,7 +131,7 @@ This code will execute and perform inference on the specified test image, displa
 - Barrel orientation vector components.
 
 #### 5.2 Python script (Inference)
-Alteranative, for the inference, a `2_inference.py` script is provided. It performs inference on a test image using the trained `YOLOv8n-pose` model. The script accepts two command-line arguments:
+Alternatively, for the inference, a `2_inference.py` script is provided. It performs inference on a test image using the trained `YOLOv8n-pose` model. The script accepts two command-line arguments:
 
 1. **image_path**: The path to the test image.
 2. **keypoint**: The keypoint to use for calculating the barrel's position and direction. Choose between `turret_keypoints[1]` (turret's top keypoint) or `turret_keypoints[3]` (barrel-turret intersection keypoint).
@@ -145,8 +145,6 @@ Or with `turret_keypoints[1]`:
 ```sh
 python 2_inference.py path/to/test/image.jpg turret_keypoints[1]
 ```
-
-
 
 ## Approach
 
