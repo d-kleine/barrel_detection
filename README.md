@@ -159,7 +159,13 @@ Here is a summary of the key steps and their significance:
     - Images have been preprocessed by being resized to 640x640 pixels to match the maximum dimensions for YOLOv8.
     - Bounding Boxes and Key Points: Bounding boxes were drawn for the hull and turret (including the barrel) for object detection, while key points were annotated for pose estimation. This dual annotation strategy allows the model to learn both the localization and orientation of the tank components.
 
-    ![BBox Pose Annotation](bbox_pose.png)
+    ![Tank](tank.png)
+
+    ![Turret](turret.png)
+
+    ![Hull](hull.png)
+
+    ![BBox Pose Prediction](bbox_pose.png)
 
     ![Keypoints](keypoints.png)
 
